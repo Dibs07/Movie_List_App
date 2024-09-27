@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:my_movie_list/screens/auth/login_page.dart';
+import 'package:my_movie_list/utils.dart';
 
 Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  await setup();
   await dotenv.load(fileName: ".env");
-  await Supabase.initialize(url: dotenv.env['SUPABASE_URL']!, anonKey: dotenv.env['SUPABASE_ANON_KEY']!);
   runApp(const MyApp());
+}
+Future<void> setup() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await registerService();
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(),
+      home: LoginPage(),
     );
   }
 }
