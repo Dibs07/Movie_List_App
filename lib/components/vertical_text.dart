@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class VerticalText extends StatefulWidget {
+  final String text;
+
+  const VerticalText({super.key, required this.text});
   @override
   _VerticalTextState createState() => _VerticalTextState();
 }
@@ -13,7 +16,7 @@ class _VerticalTextState extends State<VerticalText> {
       child: RotatedBox(
           quarterTurns: -1,
           child: Text(
-            'Sign in',
+            widget.text,
             style: TextStyle(
               color: Colors.white,
               fontSize: 38,

@@ -33,6 +33,10 @@ migrate_working_dir/
 /ios/
 /android/
 /web/
+/linux/
+/macos/
+/windows/
+/web/
 /lib/firebase_options.dart
 *.json
 # Symbolication related

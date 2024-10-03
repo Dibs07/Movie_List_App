@@ -10,6 +10,7 @@ Future main() async {
 }
 Future<void> setup() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await setupFirebase();
   await registerService();
 }
 

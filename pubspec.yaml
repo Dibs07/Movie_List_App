@@ -39,7 +39,7 @@ dependencies:
   get_it: ^8.0.0
   delightful_toast: ^1.1.0
   firebase_core: ^3.6.0
-  firebase_auth: ^5.3.1
+  firebase_auth: any
   cloud_firestore: ^5.4.4
   firebase_storage: ^12.3.2
   image_picker: ^1.1.2
